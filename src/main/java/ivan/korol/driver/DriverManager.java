@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import ivan.korol.configurations.AddressConfiguration;
+import ivan.korol.configurations.CapabilitiesConfiguration;
 import ivan.korol.configurations.ConfigurationReader;
 import ivan.korol.configurations.EnvironmentType;
 import org.apache.logging.log4j.LogManager;
@@ -35,7 +36,9 @@ public class DriverManager {
     private static AppiumDriver<MobileElement> creatDriver() {
         switch (ENVIRONMENT_TYPE) {
             case LOCAL:
-                appiumDriver = new AndroidDriver<>(null);
+                appiumDriver = new AndroidDriver<>(AddressConfiguration
+                        .getAppiumDriverLocalService(ConfigurationReader.getInstance().getAppiumPort()),
+                        CapabilitiesConfiguration.getLocalCapabilities());
                 break;
             default:
                 throw new IllegalArgumentException(format("Unknown environment type: %s", ENVIRONMENT_TYPE));
