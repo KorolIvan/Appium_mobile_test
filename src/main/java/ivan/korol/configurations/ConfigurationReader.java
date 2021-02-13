@@ -21,7 +21,7 @@ public class ConfigurationReader {
             try {
                 properties.load(new FileInputStream("src/main/resources/app.properties"));
             } catch (IOException e) {
-                LOGGER.error("Properties was not loaded by reason {}", e.getMessage());
+                LOGGER.error("Properties were not loaded by reason {}", e.getMessage());
             }
         }
         return instance;
