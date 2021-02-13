@@ -48,8 +48,8 @@ public class ConfigurationReader {
     public String getLocalDeviceName() {
         return properties.getProperty("local.device.name");
     }
-    public String getDeviceUUID() {
-        return properties.getProperty("uuid");
+    public String getDeviceUDID() {
+        return properties.getProperty("udid");
     }
     public String getAppiumAddress() {
         return properties.getProperty("appium.address");

@@ -55,7 +55,7 @@ public class DriverManager {
     public static void closeEmulator() {
         try {
             Runtime.getRuntime().exec(format("adb -s %s emu kill",
-                    ConfigurationReader.getInstance().getDeviceUUID()));
+                    ConfigurationReader.getInstance().getDeviceUDID()));
             LOGGER.info("AVD is closed");
         } catch (IOException e) {
             LOGGER.error("AVD was not closed, message {}", e.getMessage());
