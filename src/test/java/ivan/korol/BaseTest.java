@@ -20,6 +20,7 @@ public class BaseTest {
     @AfterClass
     public void tearDownSession() {
         DriverManager.closeAppiumDriver();
+        DriverManager.closeAppiumSession();
         DriverManager.closeEmulator();
     }
 }
