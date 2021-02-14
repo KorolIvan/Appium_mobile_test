@@ -5,8 +5,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 
 import static io.appium.java_client.remote.AndroidMobileCapabilityType.*;
-import static io.appium.java_client.remote.MobileCapabilityType.APP;
-import static io.appium.java_client.remote.MobileCapabilityType.UDID;
+import static io.appium.java_client.remote.MobileCapabilityType.*;
 
 public class CapabilitiesConfiguration {
 
@@ -19,6 +18,8 @@ public class CapabilitiesConfiguration {
         desiredCapabilities.setCapability(APP_PACKAGE, ConfigurationReader.getInstance().getApplicationPackage());
         desiredCapabilities.setCapability(APP_ACTIVITY, ConfigurationReader.getInstance().getApplicationActivity());
         desiredCapabilities.setCapability(APP, new File(ConfigurationReader.getInstance().getApplicationPath()).getAbsolutePath());
+        desiredCapabilities.setCapability(PLATFORM_NAME, ConfigurationReader.getInstance().getPlatformName());
+        desiredCapabilities.setCapability(PLATFORM_VERSION, ConfigurationReader.getInstance().getPlatformVersion());
         return desiredCapabilities;
     }
 }

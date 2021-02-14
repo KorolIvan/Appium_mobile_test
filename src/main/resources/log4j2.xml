@@ -5,7 +5,7 @@
     </properties>
     <Appenders>
         <File name="File" fileName="target/log/appTest.log">
-            <PatternLayout patter="${pattern}"/>
+            <PatternLayout pattern="${pattern}"/>
         </File>
         <Console name="Console">
             <PatternLayout pattern="${pattern}"/>
@@ -13,8 +13,8 @@
     </Appenders>
     <Loggers>
         <Root level="info" additivity="false">
-            <AppenderRef ref="${File}"/>
-            <AppenderRef ref="${Console}"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
 </Configuration>
